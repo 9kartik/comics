@@ -32,3 +32,13 @@ section > img	{
 	left: 0;
 	font-size: calc(1rem + 3vw);
 }
+
+section > img:first-child::before{
+  content: '⬅️';
+  margin-right: 0.5em;
+}
+
+section > img:first-child::after{
+  content: '➡️';
+  margin-left: 0.5em;
+}
