@@ -5,14 +5,13 @@
   --invert-value: 0;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
-      /* Dark Theme Variables */
       --background-color: black;
       --text-color: white;
       --invert-value: 1;
   }
-}
+} */
 
 * {
 	box-sizing: border-box;
@@ -31,7 +30,10 @@ body {
 	-webkit-overflow-scrolling: touch;
 	overflow-x: scroll;
 }
-section {
+ol{
+  list-style-type: none;
+}
+li {
 	padding: 1rem;
 	min-width: 100vw;
 	height: 100vh;
@@ -39,7 +41,7 @@ section {
 	text-align: center;
 	position: relative;
 }
-section > img, section > h1	{
+li > img, li > h1	{
 	position: absolute;
 	top: 50%;
   height: 100vh;
@@ -51,6 +53,10 @@ section > img, section > h1	{
 	font-size: calc(1rem + 3vw);
 }
 
-section:nth-of-type(n+2)>img{
+li:first-of-type>img{
+  background: black;
+}
+
+li:nth-of-type(n+2)>img{
   filter: invert(var(--invert-value));
 }
