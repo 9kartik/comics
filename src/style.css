@@ -72,3 +72,10 @@ li:has(img)::after{
   z-index: 2;
   bottom: 10%;
 }
+
+@media screen and (min-width: 30em){
+  li:has(img)::after{
+    right: 1%;
+    bottom: 50%;
+  }
+}
