@@ -60,3 +60,15 @@ li:first-of-type>img{
 li:nth-of-type(n+2)>img{
   filter: invert(var(--invert-value));
 }
+
+li:first-of-type::after{
+  color: white;
+}
+
+li:has(img)::after{
+  content: 'Swipe right for more ➡️';
+  position: absolute;
+  color: black;
+  z-index: 2;
+  bottom: 10%;
+}
