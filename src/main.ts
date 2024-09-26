@@ -44,12 +44,13 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
 document.addEventListener("DOMContentLoaded", () => {
   if (window.location.pathname) {
     const currentComic = window.location.pathname.split("/");
-    if (!currentComic[2]) {
-      return;
+    if (currentComic[2]) {
+      document
+        .querySelector(
+          "img[alt='" + currentComic[2].replace(/%20/g, " ") + "']"
+        )
+        ?.scrollIntoView();
     }
-    document
-      .querySelector("img[alt='" + currentComic[2].replace(/%20/g, " ") + "']")
-      ?.scrollIntoView();
   }
   const options = {
     root: document.querySelector("#app>.slider"),
