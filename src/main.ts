@@ -43,12 +43,10 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
 
 document.addEventListener("DOMContentLoaded", () => {
   if (window.location.pathname) {
-    const currentComic = window.location.pathname.split("/");
-    if (currentComic[2]) {
+    const currentComic = window.location.hash.slice(1);
+    if (currentComic) {
       document
-        .querySelector(
-          "img[alt='" + currentComic[2].replace(/%20/g, " ") + "']"
-        )
+        .querySelector("img[alt='" + currentComic.replace(/%20/g, " ") + "']")
         ?.scrollIntoView();
     }
   }
@@ -60,7 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const observer = new IntersectionObserver((ele) => {
     const alt = (ele[0].target as HTMLImageElement).alt;
-    history.pushState(null, "", alt);
+    window.location.hash = alt;
   }, options);
   const targets = options.root?.querySelectorAll("li>img");
   if (!targets?.length) return;
