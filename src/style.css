@@ -73,8 +73,9 @@ li:has(img)::after{
   bottom: 10%;
 }
 
-@media screen and (min-width: 30em){
+@media screen and (min-width: 30em) and (hover){
   li:has(img)::after{
+    content: 'Scroll for more ➡️';
     right: 1%;
     bottom: 50%;
   }
