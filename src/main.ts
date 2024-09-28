@@ -36,6 +36,9 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
       <img loading="lazy" src="https://some-imgs.s3.ap-south-1.amazonaws.com/comics/Runner_nature.png?v=1" alt="Rock Dove Comic"/>
     </li>
     <li>  
+      <img loading="lazy" src="https://some-imgs.s3.ap-south-1.amazonaws.com/comics/Failures.png?v=1" alt="Failures"/>
+    </li>
+    <li>  
       <h1>More coming soon...</h1>
     </li>
   </ol>
